@@ -75,7 +75,7 @@ if [ "${1:-}" = "--ci-suggest" ]; then
 
   current="${basename:0:3}"
   if [[ "$basename" =~ ^[0-9]{3}- ]] && [ "$current" != "$next" ]; then
-    errors="ADR number mismatch: $basename uses $current but next available is $next"
+    errors="ADR number mismatch: $basename uses $current which already existing number used in the /decisions directory on the main branch of rhdh-adr"
     suggestion="- Use \`decisions/${next}-${suffix}\`"
     echo "$errors"
     set_github_output error "$errors"
